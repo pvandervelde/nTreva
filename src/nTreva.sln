@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nTreva", "nTreva\nTreva.csproj", "{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionLevel", "solutionlevel\SolutionLevel.csproj", "{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BAB1F599-A542-4223-B159-1FE3E093FB2E}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget.config = ..\nuget.config
+		..\packages.config = ..\packages.config
+		..\version.xml = ..\version.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2182377E-F5AE-45DB-B7C9-3B30D52F3E89}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E82BFF-AB86-4D61-AE10-DFA6E8512DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B1C32A-53FC-4B7E-BA60-6DAFB8180A42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

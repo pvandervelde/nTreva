@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5"
+         DefaultTargets="Build"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Define the files that should be packaged for the service -->
+    <ItemGroup Condition="'$(DirBuildBin)' != ''">
+        <ArchiveFiles Include="$(DirBuildBin)\nTreva.exe" />
+        <ArchiveFiles Include="$(DirBuildBin)\nTreva.exe.config" />
+        <ArchiveFiles Include="$(DirBuildBin)\Lokad.Shared.dll" />
+        <ArchiveFiles Include="$(DirBuildBin)\Nuclei.dll" />
+        <ArchiveFiles Include="$(DirBuildBin)\Nuclei.Build.dll" />
+        <ArchiveFiles Include="$(DirBuildBin)\NuGet.Core.dll" />
+    </ItemGroup>
+</Project>

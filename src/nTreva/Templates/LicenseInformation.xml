@@ -1,0 +1,6 @@
+﻿  <package>
+    <id>${Package.Id}$</id>
+    <version>${Package.Version}$</version>
+    <url>${Package.Url}$</url>
+    <licenseurl>${Package.LicenseUrl}$</licenseurl>
+  </package>

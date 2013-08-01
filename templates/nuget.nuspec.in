@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>NTreva</id>
+        <version>${Version}</version>
+        <authors>P. van der Velde</authors>
+        <owners>P. van der Velde</owners>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <projectUrl>https://github.com/pvandervelde/nTreva</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+			Collects all the license information for the packages 
+			in use by a given application and puts this information
+			in a single XML file for later use.
+		</description>
+        <releaseNotes>
+            ${ReleaseNotes}
+        </releaseNotes>
+    </metadata>
+    <files>
+        <file src="${DirBin}\nTreva.exe" />
+        <file src="${DirBin}\Lokad.Shared.dll" />
+        <file src="${DirBin}\Nuget.Core.dll" />
+        <file src="${DirBin}\Nuclei.dll" />
+        <file src="${DirBin}\Nuclei.Build.dll" />
+    </files>
+</package>

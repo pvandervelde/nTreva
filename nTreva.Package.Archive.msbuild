@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0"
+         DefaultTargets="Run"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <!-- Build configuration -->
+        <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+        <Platform Condition=" '$(Platform)' == ''">Any CPU</Platform>
+        <PlatformTranslated>$(Platform.Replace(" ",""))</PlatformTranslated>
+    
+        <!-- Directories -->
+        <DirWorkspace>$(MSBuildProjectDirectory)</DirWorkspace>
+        <DirTemplates>$(DirWorkspace)\templates</DirTemplates>
+        <DirTools>$(DirWorkspace)\tools</DirTools>
+        <DirBuild>$(DirWorkspace)\build</DirBuild>
+        <DirBuildBin>$(DirBuild)\bin\$(PlatformTranslated)\$(Configuration)</DirBuildBin>
+        <DirBuildDeploy>$(DirBuild)\deploy</DirBuildDeploy>
+        
+        <!-- Version number -->
+        <VersionMajor>0</VersionMajor>
+        <VersionMinor>0</VersionMinor>
+        <VersionBuild>0</VersionBuild>
+        <VersionRevision>0</VersionRevision>
+        
+        <!-- Tools -->
+        <MsBuildExtensionsPath>$(DirTools)\msbuild.extensions</MsBuildExtensionsPath>
+    </PropertyGroup>
+    
+    <Import Project="$(MsBuildExtensionsPath)\FindToolFromPackages.msbuild" 
+            Condition="Exists('$(MsBuildExtensionsPath)\FindToolFromPackages.msbuild')" />
+    <Import Project="$(MsBuildExtensionsPath)\Zip.msbuild"
+            Condition="Exists('$(MsBuildExtensionsPath)\Zip.msbuild')"/>
+    
+    <Import Project="$(DirTemplates)\archive.xml"
+            Condition="Exists('$(DirTemplates)\archive.xml')"/>
+            
+    <Import Project="$(DirWorkspace)\version.xml"
+            Condition="Exists('$(DirWorkspace)\version.xml')"/>
+    
+    <!-- Display info -->
+    <Target Name="_DisplayInfo">
+        <Message Text="Creating zip package..." />
+    </Target>
+    
+    <PropertyGroup>
+        <FileNameArchive>ntreva.$(VersionMajor).$(VersionMinor).$(VersionBuild).$(VersionRevision).zip</FileNameArchive>
+        <FileArchive>$(DirBuildDeploy)\$(FileNameArchive)</FileArchive>
+    </PropertyGroup>
+    <Target Name="Run" DependsOnTargets="_DisplayInfo">
+        <MakeDir Directories="$(DirBuildDeploy)" Condition="!Exists('$(DirBuildDeploy)')" />
+    
+        <Message Text="Compressing files" />
+        <Zip InputFileNames="@(ArchiveFiles)"
+             OutputFileName="$(FileArchive)"
+             OverwriteExistingFile="true" />
+    </Target>
+ </Project>
