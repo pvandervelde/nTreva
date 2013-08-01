@@ -48,8 +48,10 @@ The solution files are created in Visual Studio 2012 (using .NET 4.5) and the en
 
 Note that the build scripts assume that:
 
-* The binaries should be signed, however the SNK key file is not included in the repository so a new key file has to be [created](http://msdn.microsoft.com/en-us/library/6f05ezxy(v=vs.110).aspx). The key file is referenced through an environment variable called `SOFTWARE_SIGNING_KEY_PATH` that has as value the full path of the key file. 
+* The binaries should be signed, however the SNK key file is not included in the repository so a new key file has to be [created][snkfile_msdn]. The key file is referenced through an environment variable called `SOFTWARE_SIGNING_KEY_PATH` that has as value the full path of the key file. 
 * GIT can be found on the PATH somewhere so that it can be called to get the hash of the last commit in the current repository. This hash is embedded in the nTreva executable together with information about the build configuration and build time and date.
+
+[snkfile_msdn]: http://msdn.microsoft.com/en-us/library/6f05ezxy(v=vs.110).aspx
 
 
  
