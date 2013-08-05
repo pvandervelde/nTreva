@@ -41,7 +41,7 @@ The output will be an file containing information about the installed packages (
 ```
 
 # Installation instructions
-The application is available from NuGet.
+The application is available from NuGet or as ZIP archive from the [releases page](https://github.com/pvandervelde/nTreva/releases).
 
 # How to build
 The solution files are created in Visual Studio 2012 (using .NET 4.5) and the entire project can be build by invoking MsBuild on the ntreva.integration.msbuild script. This will build the binaries, the NuGet package and the ZIP archive. The binaries will be placed in the `build\bin\AnyCpu\Release` directory and the NuGet package and the ZIP archive will be placed in the `build\deploy` directory.
