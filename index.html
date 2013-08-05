@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ntreva by pvandervelde</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ntreva</h1>
+        <h2>An application to extract license and project information out of installed NuGet packages.</h2>
+        <a href="https://github.com/pvandervelde/nTreva" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="ntreva" class="anchor" href="#ntreva"><span class="octicon octicon-link"></span></a>nTreva</h1>
+
+<p>nTreva is an application that creates an XML file containing license information from installed NuGet packages. To run nTreva use the following command line.</p>
+
+<pre><code>nTreva.exe -p &lt;Directory_With_Installed_Packages&gt; -o &lt;Output_File&gt; -c &lt;PackageConfigFile1&gt; -c &lt;PackageConfigFile2&gt; ... -c &lt;PackageConfigFileN&gt;
+</code></pre>
+
+<p>The output will be an file containing information about the installed packages (found in the different package.config files), their project URL and their license URL. If no project or license URL is found a default google search URL is generated. An example section as taken from the output file obtained by running nTreva on it's own workspace:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;packages&gt;</span>
+  <span class="nt">&lt;package&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Lokad.Shared<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.5.181.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://www.google.com/search?q=Lokad.Shared<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span>http://www.opensource.org/licenses/bsd-license.php<span class="nt">&lt;/licenseurl&gt;</span>
+  <span class="nt">&lt;/package&gt;</span>
+
+  <span class="nt">&lt;package&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Nuclei<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.6.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://github.com/pvandervelde/Nuclei<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span>http://www.apache.org/licenses/LICENSE-2.0<span class="nt">&lt;/licenseurl&gt;</span>
+  <span class="nt">&lt;/package&gt;</span>
+
+  <span class="nt">&lt;package&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Nuclei.Build<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.6.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://github.com/pvandervelde/Nuclei<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span>http://www.apache.org/licenses/LICENSE-2.0<span class="nt">&lt;/licenseurl&gt;</span>
+  <span class="nt">&lt;/package&gt;</span>
+
+  <span class="nt">&lt;package&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Nuget.Core<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.1.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://nuget.codeplex.com/<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span>http://nuget.codeplex.com/license<span class="nt">&lt;/licenseurl&gt;</span>
+  <span class="nt">&lt;/package&gt;</span>
+
+<span class="nt">&lt;/packages&gt;</span>
+</pre></div>
+
+<h1>
+<a name="installation-instructions" class="anchor" href="#installation-instructions"><span class="octicon octicon-link"></span></a>Installation instructions</h1>
+
+<p>The application is available from NuGet.</p>
+
+<h1>
+<a name="how-to-build" class="anchor" href="#how-to-build"><span class="octicon octicon-link"></span></a>How to build</h1>
+
+<p>The solution files are created in Visual Studio 2012 (using .NET 4.5) and the entire project can be build by invoking MsBuild on the ntreva.integration.msbuild script. This will build the binaries, the NuGet package and the ZIP archive. The binaries will be placed in the <code>build\bin\AnyCpu\Release</code> directory and the NuGet package and the ZIP archive will be placed in the <code>build\deploy</code> directory.</p>
+
+<p>Note that the build scripts assume that:</p>
+
+<ul>
+<li>The binaries should be signed, however the SNK key file is not included in the repository so a new key file has to be <a href="http://msdn.microsoft.com/en-us/library/6f05ezxy(v=vs.110).aspx">created</a>. The key file is referenced through an environment variable called <code>SOFTWARE_SIGNING_KEY_PATH</code> that has as value the full path of the key file. </li>
+<li>GIT can be found on the PATH somewhere so that it can be called to get the hash of the last commit in the current repository. This hash is embedded in the nTreva executable together with information about the build configuration and build time and date.</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/pvandervelde/nTreva/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/pvandervelde/nTreva/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/pvandervelde/nTreva"></a> is maintained by <a href="https://github.com/pvandervelde">pvandervelde</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
