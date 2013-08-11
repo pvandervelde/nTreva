@@ -1,6 +1,6 @@
 ﻿  <package>
     <id>${Package.Id}$</id>
     <version>${Package.Version}$</version>
-    <url>${Package.Url}$</url>
-    <licenseurl>${Package.LicenseUrl}$</licenseurl>
+    <url><![CDATA[${Package.Url}$]]></url>
+    <licenseurl><![CDATA[${Package.LicenseUrl}$]]></licenseurl>
   </package>
