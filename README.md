@@ -4,7 +4,7 @@ nTreva is an application that creates an XML file containing license information
 
     nTreva.exe -p <Directory_With_Installed_Packages> -o <Output_File> -c <PackageConfigFile1> -c <PackageConfigFile2> ... -c <PackageConfigFileN>
 
-The output will be an file containing information about the installed packages (found in the different package.config files), their project URL and their license URL. If no project or license URL is found a default google search URL is generated. An example section as taken from the output file obtained by running nTreva on it's own workspace:
+The output will be a file containing information about the installed packages (found in the different package.config files), their project URL and their license URL. If no project or license URL is found a default google search URL is generated. An example section as taken from the output file obtained by running nTreva on it's own workspace:
 
 ``` xml
 <?xml version="1.0" encoding="utf-8" ?>
