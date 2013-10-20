@@ -36,36 +36,36 @@
 <pre><code>nTreva.exe -p &lt;Directory_With_Installed_Packages&gt; -o &lt;Output_File&gt; -c &lt;PackageConfigFile1&gt; -c &lt;PackageConfigFile2&gt; ... -c &lt;PackageConfigFileN&gt;
 </code></pre>
 
-<p>The output will be an file containing information about the installed packages (found in the different package.config files), their project URL and their license URL. If no project or license URL is found a default google search URL is generated. An example section as taken from the output file obtained by running nTreva on it's own workspace:</p>
+<p>The output will be a file containing information about the installed packages (found in the different package.config files), their project URL and their license URL. If no project or license URL is found a default google search URL is generated. An example section as taken from the output file obtained by running nTreva on it's own workspace:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<div class="highlight highlight-xml"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
 <span class="nt">&lt;packages&gt;</span>
   <span class="nt">&lt;package&gt;</span>
     <span class="nt">&lt;id&gt;</span>Lokad.Shared<span class="nt">&lt;/id&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.5.181.0<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;url&gt;</span>http://www.google.com/search?q=Lokad.Shared<span class="nt">&lt;/url&gt;</span>
-    <span class="nt">&lt;licenseurl&gt;</span>http://www.opensource.org/licenses/bsd-license.php<span class="nt">&lt;/licenseurl&gt;</span>
+    <span class="nt">&lt;url&gt;</span><span class="cp">&lt;![CDATA[http://www.google.com/search?q=Lokad.Shared]]&gt;</span><span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span><span class="cp">&lt;![CDATA[http://www.opensource.org/licenses/bsd-license.php]]&gt;</span><span class="nt">&lt;/licenseurl&gt;</span>
   <span class="nt">&lt;/package&gt;</span>
 
   <span class="nt">&lt;package&gt;</span>
     <span class="nt">&lt;id&gt;</span>Nuclei<span class="nt">&lt;/id&gt;</span>
     <span class="nt">&lt;version&gt;</span>0.6.0.0<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;url&gt;</span>https://github.com/pvandervelde/Nuclei<span class="nt">&lt;/url&gt;</span>
-    <span class="nt">&lt;licenseurl&gt;</span>http://www.apache.org/licenses/LICENSE-2.0<span class="nt">&lt;/licenseurl&gt;</span>
+    <span class="nt">&lt;url&gt;</span><span class="cp">&lt;![CDATA[https://github.com/pvandervelde/Nuclei]]&gt;</span><span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span><span class="cp">&lt;![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]&gt;</span><span class="nt">&lt;/licenseurl&gt;</span>
   <span class="nt">&lt;/package&gt;</span>
 
   <span class="nt">&lt;package&gt;</span>
     <span class="nt">&lt;id&gt;</span>Nuclei.Build<span class="nt">&lt;/id&gt;</span>
     <span class="nt">&lt;version&gt;</span>0.6.0.0<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;url&gt;</span>https://github.com/pvandervelde/Nuclei<span class="nt">&lt;/url&gt;</span>
-    <span class="nt">&lt;licenseurl&gt;</span>http://www.apache.org/licenses/LICENSE-2.0<span class="nt">&lt;/licenseurl&gt;</span>
+    <span class="nt">&lt;url&gt;</span><span class="cp">&lt;![CDATA[https://github.com/pvandervelde/Nuclei]]&gt;</span><span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span><span class="cp">&lt;![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]&gt;</span><span class="nt">&lt;/licenseurl&gt;</span>
   <span class="nt">&lt;/package&gt;</span>
 
   <span class="nt">&lt;package&gt;</span>
     <span class="nt">&lt;id&gt;</span>Nuget.Core<span class="nt">&lt;/id&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.1.1<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;url&gt;</span>http://nuget.codeplex.com/<span class="nt">&lt;/url&gt;</span>
-    <span class="nt">&lt;licenseurl&gt;</span>http://nuget.codeplex.com/license<span class="nt">&lt;/licenseurl&gt;</span>
+    <span class="nt">&lt;url&gt;</span><span class="cp">&lt;![CDATA[http://nuget.codeplex.com/]]&gt;</span><span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;licenseurl&gt;</span><span class="cp">&lt;![CDATA[http://nuget.codeplex.com/license]]&gt;</span><span class="nt">&lt;/licenseurl&gt;</span>
   <span class="nt">&lt;/package&gt;</span>
 
 <span class="nt">&lt;/packages&gt;</span>
@@ -74,7 +74,7 @@
 <h1>
 <a name="installation-instructions" class="anchor" href="#installation-instructions"><span class="octicon octicon-link"></span></a>Installation instructions</h1>
 
-<p>The application is available from NuGet.</p>
+<p>The application is available from NuGet or as ZIP archive from the <a href="https://github.com/pvandervelde/nTreva/releases">releases page</a>.</p>
 
 <h1>
 <a name="how-to-build" class="anchor" href="#how-to-build"><span class="octicon octicon-link"></span></a>How to build</h1>
