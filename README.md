@@ -12,29 +12,29 @@ The output will be a file containing information about the installed packages (f
   <package>
     <id>Lokad.Shared</id>
     <version>1.5.181.0</version>
-    <url>http://www.google.com/search?q=Lokad.Shared</url>
-    <licenseurl>http://www.opensource.org/licenses/bsd-license.php</licenseurl>
+    <url><![CDATA[http://www.google.com/search?q=Lokad.Shared]]></url>
+    <licenseurl><![CDATA[http://www.opensource.org/licenses/bsd-license.php]]></licenseurl>
   </package>
 
   <package>
     <id>Nuclei</id>
     <version>0.6.0.0</version>
-    <url>https://github.com/pvandervelde/Nuclei</url>
-    <licenseurl>http://www.apache.org/licenses/LICENSE-2.0</licenseurl>
+    <url><![CDATA[https://github.com/pvandervelde/Nuclei]]></url>
+    <licenseurl><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></licenseurl>
   </package>
 
   <package>
     <id>Nuclei.Build</id>
     <version>0.6.0.0</version>
-    <url>https://github.com/pvandervelde/Nuclei</url>
-    <licenseurl>http://www.apache.org/licenses/LICENSE-2.0</licenseurl>
+    <url><![CDATA[https://github.com/pvandervelde/Nuclei]]></url>
+    <licenseurl><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></licenseurl>
   </package>
 
   <package>
     <id>Nuget.Core</id>
     <version>2.1.1</version>
-    <url>http://nuget.codeplex.com/</url>
-    <licenseurl>http://nuget.codeplex.com/license</licenseurl>
+    <url><![CDATA[http://nuget.codeplex.com/]]></url>
+    <licenseurl><![CDATA[http://nuget.codeplex.com/license]]></licenseurl>
   </package>
 
 </packages>
